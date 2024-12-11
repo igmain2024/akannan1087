@@ -19,7 +19,9 @@ variables:
 
   # Agent VM image name
   #vmImageName: 'ubuntu-latest'
-  vmImageName: 'Default' 
+  #vmImageName: 'Default' 
+  pool:
+  name: 'Self-hosted'
 stages:
 - stage: Build
   displayName: Build stage
