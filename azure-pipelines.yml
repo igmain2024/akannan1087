@@ -21,7 +21,7 @@ variables:
   #vmImageName: 'ubuntu-latest'
   #vmImageName: 'Default' 
   pool:
-  name: 'Self-hosted'
+  name: 'Default'
 stages:
 - stage: Build
   displayName: Build stage
@@ -29,8 +29,8 @@ stages:
   - job: MavenPackageAndPublishArtifacts
     displayName: Maven Package and Publish Artifacts
     pool:
-      vmImage: $(vmImageName)
-
+      #vmImage: $(vmImageName)
+      name: 'Default'
     steps:
     - task: Maven@4
       displayName: 'Maven Package'
@@ -63,7 +63,8 @@ stages:
     displayName: Deploy Linux Web App
     environment: $(environmentName)
     pool:
-      vmImage: $(vmImageName)
+      #vmImage: $(vmImageName)
+      name: 'Default'
     strategy:
       runOnce:
         deploy:
