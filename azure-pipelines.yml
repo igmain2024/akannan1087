@@ -18,8 +18,8 @@ variables:
   environmentName: 'MyAwesomeSuperWebApp'
 
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
-
+  #vmImageName: 'ubuntu-latest'
+  name: 'default' 
 stages:
 - stage: Build
   displayName: Build stage
